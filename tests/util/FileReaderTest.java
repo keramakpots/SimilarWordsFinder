@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
 
 public class FileReaderTest {
-    private final String DICTIONARY_FILE = "test dictionary.txt";
+    private final String DICTIONARY_FILE = "testResources/test dictionary.txt";
     private FileReader fileReader;
 
     @BeforeAll
