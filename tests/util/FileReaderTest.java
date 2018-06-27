@@ -1,5 +1,6 @@
 package util;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.Assert;
@@ -16,7 +17,7 @@ public class FileReaderTest {
     }
 
     @Test
-    void testIfFileReaderLoadsEveryWordFromFile() {
+    void testIfFileReaderLoadsEveryWordFromFile() throws IOException {
         List<String> testStrings = Arrays.asList("koń", "toń", "goń", "Słoń");
         List<String> loadedStrings = fileReader.getWordsFromFile(DICTIONARY_FILE);
         for (String string:testStrings) {
