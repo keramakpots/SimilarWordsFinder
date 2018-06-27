@@ -29,7 +29,7 @@ public class WordsComparatorTest {
 
     @Test
     public void testIfMethodReturnsTrueIfWordsAreDifferentByOneLetter() {
-        Assert.assertFalse(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
+        Assert.assertTrue(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
             WORD_WITH_ONE_DIFFERENCE));
     }
 }
