@@ -32,4 +32,10 @@ public class WordsComparatorTest {
         Assert.assertTrue(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
             WORD_WITH_ONE_DIFFERENCE));
     }
+
+    @Test
+    public void testIfMethodReturnsFalseIfWordsAreDifferentByMoreThanOneLetter() {
+        Assert.assertFalse(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
+            WORD_WITH_MORE_THEN_ONE_DIFFERENCE));
+    }
 }
