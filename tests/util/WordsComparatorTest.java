@@ -1,8 +1,8 @@
 package util;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
 
 public class WordsComparatorTest {
     private WordsComparator wordsComparator;
@@ -10,7 +10,7 @@ public class WordsComparatorTest {
     private String SECOND_EXAMPLE_WORD;
     private String THIRD_EXAMPLE_WORD;
 
-    @Before
+    @BeforeAll
     public void setUp() {
         wordsComparator = new WordsComparator();
         FIRST_EXAMPLE_WORD = "abcd";
