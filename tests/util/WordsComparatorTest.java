@@ -27,4 +27,9 @@ public class WordsComparatorTest {
             LONGER_EXAMPLE_WORD));
     }
 
+    @Test
+    public void testIfMethodReturnsTrueIfWordsAreDifferentByOneLetter() {
+        Assert.assertFalse(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
+            WORD_WITH_ONE_DIFFERENCE));
+    }
 }
