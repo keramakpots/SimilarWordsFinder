@@ -10,8 +10,8 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileReader {
-    public FileReader() {
+public class FileParser {
+    public FileParser() {
     }
     final static Charset ENCODING = StandardCharsets.UTF_8;
     public List<String> getWordsFromFile(String pathToFile) throws IOException {
