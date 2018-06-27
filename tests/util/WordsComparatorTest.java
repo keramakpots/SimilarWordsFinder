@@ -1,17 +1,21 @@
+package util;
+
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
-import util.WordsComparator;
+import org.junit.jupiter.api.BeforeAll;
 
 public class WordsComparatorTest {
     private WordsComparator wordsComparator;
-    private final String FIRST_EXAMPLE_WORD = "abcd";
-    private final String SECOND_EXAMPLE_WORD = "bdca";
-    private final String THIRD_EXAMPLE_WORD = "bdcsda";
+    private String FIRST_EXAMPLE_WORD;
+    private String SECOND_EXAMPLE_WORD;
+    private String THIRD_EXAMPLE_WORD;
 
-    @Before
+    @BeforeAll
     public void setUp() {
         wordsComparator = new WordsComparator();
+        FIRST_EXAMPLE_WORD = "abcd";
+        SECOND_EXAMPLE_WORD = "bcda";
+        THIRD_EXAMPLE_WORD = "bdcsda";
     }
 
     @Test
