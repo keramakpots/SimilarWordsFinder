@@ -7,12 +7,12 @@ public class ChainToWordCreatorTest {
     private ChainToWordCreator chainToWordCreator;
 
     @Before
-    void setUp() {
+    public void setUp() {
         chainToWordCreator = new ChainToWordCreator();
     }
 
     @Test
-    void testIfMethodToCompareWordsLengthReturnTrueIfTheyAreEqual() {
+    public void testIfMethodToCompareWordsLengthReturnTrueIfTheyAreEqual() {
         String first = "abcd";
         String second = "bdca";
         Assert.assertTrue(chainToWordCreator.areWordsTheSameLength(first, second));
