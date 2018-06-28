@@ -16,7 +16,7 @@ public class WordsComparator {
         char[] checkChars = secondComparableString.toCharArray();
         int diffLetters = 0;
 
-        if (baseChars.length != checkChars.length) {
+        if (isThoseArraysNotEqualLength(baseChars, checkChars)) {
             return false;
         }
 
@@ -31,6 +31,10 @@ public class WordsComparator {
         } else {
             return false;
         }
+    }
+
+    private boolean isThoseArraysNotEqualLength(char[] baseChars, char[] checkChars) {
+        return baseChars.length != checkChars.length;
     }
 
     public List<String> getSameLengthWords(List<String> strings, int desired_length) {
