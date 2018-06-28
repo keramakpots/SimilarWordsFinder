@@ -113,6 +113,10 @@ public class Chain {
         }
         Collections.reverse(map.get(shortChainIndex));
         List<String> list = new ArrayList<>(map.get(shortChainIndex));
+        printListsElements(list);
+    }
+
+    private void printListsElements(List<String> list) {
         for (String s : list) {
             System.out.println(s);
         }
