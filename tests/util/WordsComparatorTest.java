@@ -20,13 +20,15 @@ public class WordsComparatorTest {
 
     @Test
     public void testIfMethodToCompareWordsLengthReturnTrueIfTheyAreEqual() {
-        Assert.assertTrue(wordsComparator.areWordsTheSameLength(FIRST_EXAMPLE_WORD,
-            WORD_WITH_MORE_THEN_ONE_DIFFERENCE));
+        Assert.assertFalse(
+            wordsComparator.isThoseArraysNotEqualLength(FIRST_EXAMPLE_WORD.toCharArray(),
+                WORD_WITH_MORE_THEN_ONE_DIFFERENCE.toCharArray()));
     }
     @Test
     public void testIfMethodToCompareWordsLengthReturnFalseIfTheyAreNotEqual() {
-        Assert.assertFalse(wordsComparator.areWordsTheSameLength(FIRST_EXAMPLE_WORD,
-            LONGER_EXAMPLE_WORD));
+        Assert.assertTrue(
+            wordsComparator.isThoseArraysNotEqualLength(FIRST_EXAMPLE_WORD.toCharArray(),
+                LONGER_EXAMPLE_WORD.toCharArray()));
     }
 
     @Test

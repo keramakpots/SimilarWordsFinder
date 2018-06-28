@@ -6,10 +6,6 @@ import java.util.List;
 //method to compare words length and Hamming distance
 public class WordsComparator {
 
-    public boolean areWordsTheSameLength(String firstComparableString, String secondComparableString) {
-        return firstComparableString.length() == secondComparableString.length();
-    }
-
     public boolean areWordsDifferentByOneWord(String firstComparableString,
         String secondComparableString) {
         char[] baseChars = firstComparableString.toCharArray();
@@ -33,7 +29,7 @@ public class WordsComparator {
         }
     }
 
-    private boolean isThoseArraysNotEqualLength(char[] baseChars, char[] checkChars) {
+    public boolean isThoseArraysNotEqualLength(char[] baseChars, char[] checkChars) {
         return baseChars.length != checkChars.length;
     }
 
