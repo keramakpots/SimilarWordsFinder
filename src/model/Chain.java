@@ -20,6 +20,9 @@ public class Chain {
     public Chain(List<String> dictionary, List<String> chainFromFirstWordToDesired) {
         this.dictionary = dictionary;
         this.chainFromFirstWordToDesired = chainFromFirstWordToDesired;
+        this.firstWord = new Branch(chainFromFirstWordToDesired.get(0), null);
+        this.desiredWord = chainFromFirstWordToDesired.get(1);
+        this.buildBranch(firstWord);
     }
 
     public List<String> getDictionary() {
