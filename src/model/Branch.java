@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Branch {
@@ -46,4 +47,18 @@ public class Branch {
     public void setChildren(List<Branch> children) {
         this.children = children;
     }
+
+    public List<String> returnParentData() {
+        Branch node = this;
+        List<String> list = new ArrayList<>();
+        while (node.getParent() != null) {
+            list.add(node.getData());
+            node = node.getParent();
+            if (node.getParent() == null) {
+                list.add(node.getData());
+            }
+        }
+        return list;
+    }
+
 }
