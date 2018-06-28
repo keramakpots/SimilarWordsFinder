@@ -31,9 +31,9 @@ public class FileParser {
 
                 for (int i = 0; i < list.size(); i++) {
                     if (list.get(i).length() <= 1) {
-                        if (i > 0) {
-                            i -= 1;
-                        }
+                        list.remove(i);
+                    }
+                    if (list.get(i).isEmpty()) {
                         list.remove(i);
                     }
                 }
