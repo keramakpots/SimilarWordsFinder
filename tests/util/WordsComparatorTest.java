@@ -1,5 +1,7 @@
 package util;
 
+import java.util.Arrays;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -37,5 +39,16 @@ public class WordsComparatorTest {
     public void testIfMethodReturnsFalseIfWordsAreDifferentByMoreThanOneLetter() {
         Assert.assertFalse(wordsComparator.areWordsDifferentByOneWord(FIRST_EXAMPLE_WORD,
             WORD_WITH_MORE_THEN_ONE_DIFFERENCE));
+    }
+
+    @Test
+    public void testIfMethodReturnsWordsWithTheSameLength() {
+        final int DESIRED_LENGTH = 4;
+        List<String> equalLengthWords = wordsComparator.getSameLengthWords(
+            Arrays.asList(FIRST_EXAMPLE_WORD, WORD_WITH_ONE_DIFFERENCE, LONGER_EXAMPLE_WORD),
+            DESIRED_LENGTH);
+        for (String word : equalLengthWords) {
+            Assert.assertTrue(word.length() == DESIRED_LENGTH);
+        }
     }
 }
