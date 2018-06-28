@@ -1,5 +1,6 @@
 package util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 //method to compare words length and Hamming distance
@@ -33,6 +34,12 @@ public class WordsComparator {
     }
 
     public List<String> getSameLengthWords(List<String> strings, int desired_length) {
-        return null;
+        List<String> list1 = new ArrayList<>();
+        for (String st : strings) {
+            if (st.length() == desired_length) {
+                list1.add(st);
+            }
+        }
+        return list1;
     }
 }
