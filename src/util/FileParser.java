@@ -10,9 +10,12 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FileReader {
+public class FileParser {
+    public FileParser() {
+    }
     final static Charset ENCODING = StandardCharsets.UTF_8;
-    public List<String> getWordsFromFile(String pathToFile) throws IOException {
+
+    public static List<String> getWordsFromFile(String pathToFile) throws IOException {
 
 
             List<String> list = new ArrayList<>();
@@ -28,6 +31,9 @@ public class FileReader {
 
                 for (int i = 0; i < list.size(); i++) {
                     if (list.get(i).length() <= 1) {
+                        list.remove(i);
+                    }
+                    if (list.get(i).isEmpty()) {
                         list.remove(i);
                     }
                 }

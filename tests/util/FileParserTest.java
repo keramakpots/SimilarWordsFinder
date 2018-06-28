@@ -5,23 +5,21 @@ import java.util.Arrays;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeAll;
 
-public class FileReaderTest {
+public class FileParserTest {
     private final String DICTIONARY_FILE = "testResources/test dictionary.txt";
-    private FileReader fileReader;
-
-    @BeforeAll
-    void setUp() {
-        fileReader = new FileReader();
-    }
 
     @Test
-    void testIfFileReaderLoadsEveryWordFromFile() throws IOException {
+    public void testIfFileReaderLoadsEveryWordFromFile() throws IOException {
         List<String> testStrings = Arrays.asList("koń", "toń", "goń", "Słoń");
-        List<String> loadedStrings = fileReader.getWordsFromFile(DICTIONARY_FILE);
+        List<String> loadedStrings = FileParser.getWordsFromFile(DICTIONARY_FILE);
         for (String string:testStrings) {
             Assert.assertTrue(loadedStrings.contains(string));
         }
+    }
+    @Test
+    public void testIfFileParserDoNotLoadsEmptyString() throws IOException {
+        List<String> loadedStrings = FileParser.getWordsFromFile(DICTIONARY_FILE);
+        Assert.assertFalse(loadedStrings.contains(""));
     }
 }
