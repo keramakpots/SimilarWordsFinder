@@ -49,13 +49,13 @@ public class Branch {
     }
 
     public List<String> returnParentData() {
-        Branch node = this;
+        Branch branch = this;
         List<String> list = new ArrayList<>();
-        while (node.getParent() != null) {
-            list.add(node.getData());
-            node = node.getParent();
-            if (node.getParent() == null) {
-                list.add(node.getData());
+        while (branch.getParent() != null) {
+            list.add(branch.getData());
+            branch = branch.getParent();
+            if (branch.getParent() == null) {
+                list.add(branch.getData());
             }
         }
         return list;
