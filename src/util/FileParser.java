@@ -14,7 +14,8 @@ public class FileParser {
     public FileParser() {
     }
     final static Charset ENCODING = StandardCharsets.UTF_8;
-    public List<String> getWordsFromFile(String pathToFile) throws IOException {
+
+    public static List<String> getWordsFromFile(String pathToFile) throws IOException {
 
 
             List<String> list = new ArrayList<>();

@@ -33,7 +33,7 @@ public class WordsComparator {
         return baseChars.length != checkChars.length;
     }
 
-    public List<String> getSameLengthWords(List<String> strings, int desired_length) {
+    public static List<String> getSameLengthWords(List<String> strings, int desired_length) {
         List<String> list1 = new ArrayList<>();
         for (String st : strings) {
             if (st.length() == desired_length) {
