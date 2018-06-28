@@ -6,7 +6,7 @@ public class Chain {
 
     private List<String> dictionary;
     private List<String> chainFromFirstWordToDesired;
-    private String firstWord;
+    private Branch firstWord;
     private String desiredWord;
 
 }
