@@ -22,4 +22,28 @@ public class Branch {
         this.parent = parent;
         this.children = children;
     }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public Branch getParent() {
+        return parent;
+    }
+
+    public void setParent(Branch parent) {
+        this.parent = parent;
+    }
+
+    public List<Branch> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<Branch> children) {
+        this.children = children;
+    }
 }
