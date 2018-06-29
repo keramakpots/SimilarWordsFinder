@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedHashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import util.WordsComparator;
@@ -60,7 +61,7 @@ public class Chain {
     private void writeChildrens(Branch branch) {
         List<String> currentDictionary = new ArrayList<>(dictionary);
         currentDictionary.removeAll(branch.returnParentData());
-        List<Branch> children = new ArrayList<>();
+        List<Branch> children = new LinkedList<>();
         String data = branch.getData();
 
         for (String st : currentDictionary) {
