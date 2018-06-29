@@ -21,7 +21,7 @@ public class Main {
             chain.print();
             chain.findShortestSuitableChain();
             long endTime = System.currentTimeMillis();
-            System.out.println("Founded in " + ((endTime - startTime) / 1000 % 60) + "miliseconds");
+            System.out.println("Founded in " + ((endTime - startTime) / 1000 % 60) + "seconds");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
