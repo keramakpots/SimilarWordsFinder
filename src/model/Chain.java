@@ -10,8 +10,6 @@ import util.WordsComparator;
 
 public class Chain {
 
-    public Chain() {
-    }
     private List<String> dictionary;
     private List<String> chainFromFirstWordToDesired;
     private Branch firstWord;
@@ -24,38 +22,6 @@ public class Chain {
         this.firstWord = new Branch(chainFromFirstWordToDesired.get(0), null);
         this.desiredWord = chainFromFirstWordToDesired.get(1);
         this.buildBranch(firstWord);
-    }
-
-    public List<String> getDictionary() {
-        return dictionary;
-    }
-
-    public void setDictionary(List<String> dictionary) {
-        this.dictionary = dictionary;
-    }
-
-    public List<String> getChainFromFirstWordToDesired() {
-        return chainFromFirstWordToDesired;
-    }
-
-    public void setChainFromFirstWordToDesired(List<String> chainFromFirstWordToDesired) {
-        this.chainFromFirstWordToDesired = chainFromFirstWordToDesired;
-    }
-
-    public Branch getFirstWord() {
-        return firstWord;
-    }
-
-    public void setFirstWord(Branch firstWord) {
-        this.firstWord = firstWord;
-    }
-
-    public String getDesiredWord() {
-        return desiredWord;
-    }
-
-    public void setDesiredWord(String desiredWord) {
-        this.desiredWord = desiredWord;
     }
 
     private void writeChildrens(Branch branch) {
