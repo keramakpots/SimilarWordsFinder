@@ -7,6 +7,9 @@ import util.WordsComparator;
 
 public class Main {
 
+    private static final int TO_MINUTES = 1000;
+    private static final int TO_SECONDS = 60;
+
     public static void main(String[] args) {
         final String START_WORD = "lead";
         final String FINAL_WORD = "goat";
@@ -21,7 +24,7 @@ public class Main {
             chain.print();
             chain.findShortestSuitableChain();
             long endTime = System.currentTimeMillis();
-            System.out.println("Founded in " + ((endTime - startTime) / 1000 % 60) + "seconds");
+            System.out.println("Founded in " + ((endTime - startTime) / TO_MINUTES % TO_SECONDS) + "seconds");
         } catch (IOException ex) {
             ex.printStackTrace();
         }
