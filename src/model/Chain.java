@@ -13,8 +13,8 @@ public class Chain {
     private List<String> dictionary;
     private List<String> chainFromFirstWordToDesired;
     private Branch firstWord;
-
     private String desiredWord;
+    private final int LAST_ELEMENT = 1;
 
     public Chain(List<String> dictionary, List<String> chainFromFirstWordToDesired) {
         this.dictionary = dictionary;
@@ -36,6 +36,16 @@ public class Chain {
             }
         }
         branch.setChildren(children);
+        if(!branch.getChildren().isEmpty()) {
+            if(checkIfCurrentBranchEndIsDifferentByOneWordFromDesiredWord(branch)) {
+                findShortestSuitableChain();
+            }
+        }
+    }
+
+    private boolean checkIfCurrentBranchEndIsDifferentByOneWordFromDesiredWord(Branch branch) {
+        return WordsComparator
+            .areWordsDifferentByOneWord(branch.getChildren().get(branch.getChildren().size()-LAST_ELEMENT).getData(), desiredWord);
     }
 
     private void buildBranch(Branch branch) {
@@ -50,13 +60,15 @@ public class Chain {
 
     private void findSuitableChains(Branch branch, Map<Integer, List<String>> map) {
         List<Branch> children = branch.getChildren();
-        if (children.size() > 0) {
-            for (Branch child : children) {
-                if (child.getData().equals(desiredWord)) {
-                    int i = map.size();
-                    map.put(i, child.returnParentData());
-                } else {
-                    findSuitableChains(child, map);
+        if(children!=null) {
+            if (children.size() > 0) {
+                for (Branch child : children) {
+                    if (child.getData().equals(desiredWord)) {
+                        int i = map.size();
+                        map.put(i, child.returnParentData());
+                    } else {
+                        findSuitableChains(child, map);
+                    }
                 }
             }
         }
