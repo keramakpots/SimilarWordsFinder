@@ -14,6 +14,7 @@ public class Chain {
     private List<String> chainFromFirstWordToDesired;
     private Branch firstWord;
     private String desiredWord;
+    private Branch lastBranch;
     private final int LAST_ELEMENT = 1;
 
     public Chain(List<String> dictionary, List<String> chainFromFirstWordToDesired) {
@@ -93,11 +94,13 @@ public class Chain {
         Collections.reverse(map.get(shortChainIndex));
         List<String> list = new ArrayList<>(map.get(shortChainIndex));
         printListsElements(list);
+        System.exit(0);
     }
 
     private void printListsElements(List<String> list) {
         for (String s : list) {
             System.out.println(s);
         }
+        System.out.println("---------");
     }
 }
